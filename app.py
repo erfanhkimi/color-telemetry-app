@@ -7,8 +7,8 @@ from sklearn.cluster import KMeans
 
 # 1. Page Configuration
 st.set_page_config(page_title="Color Telemetry Studio", layout="wide")
-st.title("🎬 Multimedia Color Telemetry Extractor")
-st.markdown("Analyze visual color palettes, lighting trends, and visual mood from video frames.")
+st.title(" Multimedia Color Telemetry Extractor")
+st.markdown("Analyze visual color palettes, lighting trends, and visual mood from video frames or image.")
 
 # 2. Sidebar Controls
 st.sidebar.header("Settings")
@@ -127,3 +127,28 @@ if uploaded_file is not None:
 
         st.subheader("Raw Frame Data")
         st.dataframe(df, use_container_width=True)
+
+# Fixed Sticky Footer
+st.markdown(
+    """
+    <style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #0E1117;
+        color: #888888;
+        text-align: center;
+        padding: 8px 0px;
+        font-size: 13px;
+        border-top: 1px solid #1A1D24;
+        z-index: 999;
+    }
+    </style>
+    <div class="footer">
+        <p>© 2026 Muhammad Erfan Hakimi • Color Telemetry Studio™ | All Rights Reserved</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
